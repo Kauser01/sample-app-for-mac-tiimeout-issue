@@ -8,7 +8,7 @@ angular
             $scope.responseData = " ";
             var req = {
                 method: verb,
-                url: uri,
+                url: window.origin+"/data",
                 timeout:300000
             }
             console.log("Request made for:"+req.url);
