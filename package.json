@@ -7,7 +7,7 @@
     "express": "4.17.1"
   },
   "description": "TestApp",
-  "main": "server.js",
+  "main": "app.js",
   "name": "testapp",
   "version": "0.0.1"
 }
