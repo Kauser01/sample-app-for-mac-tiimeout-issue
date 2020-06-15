@@ -7,11 +7,11 @@ app.use(cors());
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
-app.get('/', function (req, res) {
+app.get('/cens/timeout', function (req, res) {
   res.render('index');
 });
 
-app.get('/data', function (req, res) {
+app.get('/cens/timeout/data', function (req, res) {
   var timeout = req.query.timeout || 80;
   console.log("In data");
   setTimeout(function(){
