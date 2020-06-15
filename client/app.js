@@ -5,10 +5,14 @@ angular
     ]).controller('MainCtrl', ['$scope', '$q', '$http', function ($scope, $q, $http) {
         $scope.responseData = " ";
         $scope.testFunction = function (uri, verb, params, data) {
+            var timeout = $("#timeout").val();
+            console.log("timeout", timeout);
+            $("#Loading").text("Waiting for response...");
+            var url = window.location.href+ "data?timeout=" + timeout;
             $scope.responseData = " ";
             var req = {
                 method: verb,
-                url: window.origin+"/data",
+                url: url,
                 timeout:300000
             }
             console.log("Request made for:"+req.url);

@@ -33,4 +33,4 @@ app.listen(process.env.PORT || 3000, function () {
 
 app.set('views', __dirname + '/client/');
 
-app.use(express.static(path.join(__dirname, '/client')));
+app.use("/cens/timeout", express.static(path.join(__dirname, '/client')));
