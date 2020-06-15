@@ -1,7 +1,9 @@
 var express = require('express');
 var path = require('path');
 var app = express();
+var cors = require('cors');
 
+app.use(cors());
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
@@ -10,12 +12,13 @@ app.get('/', function (req, res) {
 });
 
 app.get('/data', function (req, res) {
+  var timeout = req.query.timeout || 80;
   console.log("In data");
   setTimeout(function(){
     console.log("before sending the response");
     res.setHeader("Access-Control-Request-Methods", "GET");
     res.send({data:'Response from server.'});
-  },80000);
+  },(timeout*1000));
 });
 
 app.listen(process.env.PORT || 3000, function () {
