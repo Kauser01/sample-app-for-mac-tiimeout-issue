@@ -7,8 +7,12 @@ app.use(cors());
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
-app.get('/cens/timeout', function (req, res) {
+app.get('/cens/timeout/', function (req, res) {
   res.render('index');
+});
+
+app.get('/cens/timeout/status', function (req, res) {
+  res.send("Hello from api");
 });
 
 app.get('/cens/timeout/data', function (req, res) {
